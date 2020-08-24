@@ -1,0 +1,21 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* jumbotron */
+
+.jumbotron {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  margin-top: 61px;
+}
+
+/* universal */
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+h1.title {
+  margin-top: 0px;
+}
+
