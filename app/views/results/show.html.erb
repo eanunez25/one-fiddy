@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Wmp:</strong>
+  <%= @result.wmp %>
+</p>
+
+<p>
+  <strong>Accuracy:</strong>
+  <%= @result.accuracy %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @result.user %>
+</p>
+
+<%= link_to 'Edit', edit_result_path(@result) %> |
+<%= link_to 'Back', results_path %>
