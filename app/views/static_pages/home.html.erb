@@ -1,2 +1,7 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, "Home") %>
+
+<div class="jumbotron text-center">
+  <h1>One Fiddy</h1>
+  <h2>Type one hundred fifty words per minute, eventually.</h2>
+  <%= link_to "Sign up now!", "#", class: "btn btn-primary"%>
+</div>
