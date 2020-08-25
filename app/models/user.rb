@@ -3,5 +3,5 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true, length: { minimum: 5, maximum: 12 }, format: { with: USERNAME_REGEX }
 
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 end
