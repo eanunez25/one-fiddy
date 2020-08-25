@@ -7,8 +7,21 @@
       <h1><%= @user.username %><h1>
     </section>
   </aside>
+  <div class="col-md-8">
+    <% if @user.results.any? %>
+      <h3>Results (<%= @user.results.count %>)</h3>
+      <ol class="results">
+        <% @results.each do |result| %>
+          <li id="result-<%= result.id %>">
+            <span class="test">Attempt: <%= result.id%><span>
+            <span class="wpm">WPM: <%= result.wpm %></span>
+            <span class="accuracy">Accuracy: <%= result.accuracy %></span>
+            <span class="timestamp"><%= result.created_at %></span>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+  </div>
 </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
 
