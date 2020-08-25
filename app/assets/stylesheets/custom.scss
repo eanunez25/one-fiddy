@@ -90,7 +90,7 @@ p {
 /* sidebar */
 
 aside {
-  section.user_info {
+  section.user-info {
     margin-top: 40px;
   }
   section {
@@ -106,7 +106,14 @@ aside {
       line-height: 1;
     }
     h1 {
-      font-size: 1.4em;
+      font-size: 2em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+    }
+    h3 {
+      font-size: 1.5em;
       text-align: left;
       letter-spacing: -1px;
       margin-bottom: 0px;
@@ -125,13 +132,27 @@ aside {
 }
 
 .stats {
-  overflow: auto;
+  font-size: 20px;
+
   margin-top: 0;
   padding: 0;
-  a {
+  .stat {
     float: left;
     padding: 0 10px;
-    border-left: 1px solid $gray-lighter;
+    border-left: 1px solid rgb(194, 194, 194);
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  .stat2 {
+    float: left;
+    padding: 0;
     color: gray;
     &:first-child {
       padding-left: 0;
@@ -216,7 +237,7 @@ input {
     }
   }
   .timestamp {
-    color: $gray-light;
+    color: grey;
     display: block;
 
   }

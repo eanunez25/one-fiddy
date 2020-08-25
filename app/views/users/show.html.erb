@@ -5,6 +5,19 @@
   <aside class="col-md-4">
     <section class="user-info">
       <h1><%= @user.username %><h1>
+      <div class="stats">
+        <strong id="average" class="stat">
+          <%= @user.results.average("wpm")%> average
+        </strong>
+        <strong id="average" class="stat">
+          <%= @user.results.maximum("wpm")%> max
+        </strong><br>
+        <strong id="average" class="stat2">
+          <%= @user.results.count%> attempts
+        </strong>
+      </div><br></br>
+      <h3><%= link_to "Settings", edit_user_path %></h3>
+      <h3><%= link_to "Logout", logout_path, method: :delete %></h3>
     </section>
   </aside>
   <div class="col-md-8">

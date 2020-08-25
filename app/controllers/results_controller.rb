@@ -1,5 +1,6 @@
 class ResultsController < ApplicationController
   before_action :set_result, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy]
 
   # GET /results
   # GET /results.json
@@ -24,16 +25,12 @@ class ResultsController < ApplicationController
   # POST /results
   # POST /results.json
   def create
-    @result = Result.new(result_params)
-
-    respond_to do |format|
-      if @result.save
-        format.html { redirect_to @result, notice: 'Result was successfully created.' }
-        format.json { render :show, status: :created, location: @result }
-      else
-        format.html { render :new }
-        format.json { render json: @result.errors, status: :unprocessable_entity }
-      end
+    @result = current_user.results.build(result_params)
+    if @result.save
+      flash[:success] = "Result saved!"
+      redirect_to root_url
+    else
+      render 'static_pages/home'
     end
   end
 
