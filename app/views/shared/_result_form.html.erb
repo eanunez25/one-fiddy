@@ -1,0 +1,10 @@
+<%= form_with(model: @result, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :wpm, "WPM" %>
+    <%= f.text_field :wpm %>
+
+    <%= f.label :accuracy %>
+    <%= f.text_field :accuracy %>
+  </div>
+  <%= f.submit "Log", class: "brn btn-primary" %>
+<% end %>

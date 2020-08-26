@@ -1,5 +1,18 @@
 <% provide(:title, "Home") %>
 
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-3">
+      <section class="user-info">
+        <%= render 'shared/user_info'%>
+      </section>
+      <section class="result-form">
+        <%= render 'shared/result_form'%>
+      </section>
+    </aside>
+  </div>
+<% end %>
+
 <div class="jumbotron text-center">
   <h2>Type one hundred fifty words per minute, eventually.</h2>
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"%>

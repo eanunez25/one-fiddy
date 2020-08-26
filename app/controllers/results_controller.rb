@@ -66,6 +66,6 @@ class ResultsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def result_params
-      params.require(:result).permit(:wmp, :accuracy, :user)
+      params.require(:result).permit(:wpm, :accuracy, :user)
     end
 end

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @results = @user.results.all
+    @results = @user.results.order("created_at DESC")
   end
 
   # GET /users/new
