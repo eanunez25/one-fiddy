@@ -2,7 +2,7 @@
 
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-md-3">
+    <aside class="col-md-4">
       <section class="user-info">
         <%= render 'shared/user_info'%>
       </section>
@@ -10,10 +10,17 @@
         <%= render 'shared/result_form'%>
       </section>
     </aside>
+    <div class="col-md-8">
+      <h3>Result Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+
+<% else %>
+  <div class="jumbotron text-center">
+    <h2>Type one hundred fifty words per minute, eventually.</h2>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"%>
   </div>
 <% end %>
 
-<div class="jumbotron text-center">
-  <h2>Type one hundred fifty words per minute, eventually.</h2>
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"%>
-</div>
+

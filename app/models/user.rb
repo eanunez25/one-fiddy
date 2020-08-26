@@ -6,4 +6,9 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   has_many :results, dependent: :destroy
+
+
+  def feed
+    Result.where("user_id = ?", id)
+  end
 end

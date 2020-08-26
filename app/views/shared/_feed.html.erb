@@ -1,0 +1,14 @@
+<% if @feed_items.any? %>
+  <ol class="results">
+    <% @feed_items.each do |i| %>
+      <li>
+          <span class="wpm"><a href="/users/<%= i.user.id %>"><%= i.user.username %></a></span>
+          <span class="wpm">WPM: <%= i.wpm %></span>
+          <span class="accuracy">Accuracy: <%= i.accuracy %></span>
+          <span class="timestamp"><%= i.created_at %></span>
+          <%= link_to "delete", i, method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
+

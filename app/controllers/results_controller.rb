@@ -1,6 +1,7 @@
 class ResultsController < ApplicationController
   before_action :set_result, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:create, :destroy]
+  before_action :correct_user, only: :destroy
 
   # GET /results
   # GET /results.json
@@ -52,10 +53,8 @@ class ResultsController < ApplicationController
   # DELETE /results/1.json
   def destroy
     @result.destroy
-    respond_to do |format|
-      format.html { redirect_to results_url, notice: 'Result was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:sucess] = "Result deleted"
+    redirect_to request.referrer || root_url
   end
 
   private
@@ -67,5 +66,10 @@ class ResultsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def result_params
       params.require(:result).permit(:wpm, :accuracy, :user)
+    end
+
+    def correct_user
+      @result = current_user.results.find_by(id: params[:id])
+      redirect_to root_url if @result.nil?
     end
 end

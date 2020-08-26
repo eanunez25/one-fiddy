@@ -28,10 +28,10 @@
       <ol class="results">
         <% @results.each do |result| %>
           <li id="result-<%= result.id %>">
-            <span class="test">Attempt: <%= result.id%><span>
             <span class="wpm">WPM: <%= result.wpm %></span>
             <span class="accuracy">Accuracy: <%= result.accuracy %></span>
             <span class="timestamp"><%= result.created_at %></span>
+            <%= link_to "delete", result, method: :delete, data: { confirm: "Are you sure?" } %>
           </li>
         <% end %>
       </ol>
