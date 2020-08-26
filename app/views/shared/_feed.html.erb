@@ -6,7 +6,9 @@
           <span class="wpm">WPM: <%= i.wpm %></span>
           <span class="accuracy">Accuracy: <%= i.accuracy %></span>
           <span class="timestamp"><%= i.created_at %></span>
-          <%= link_to "delete", i, method: :delete, data: { confirm: "Are you sure?" } %>
+          <% if current_user?(i.user) %>
+            <%= link_to "delete", i, method: :delete, data: { confirm: "Are you sure?" } %>
+          <% end %>
       </li>
     <% end %>
   </ol>

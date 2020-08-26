@@ -31,7 +31,9 @@
             <span class="wpm">WPM: <%= result.wpm %></span>
             <span class="accuracy">Accuracy: <%= result.accuracy %></span>
             <span class="timestamp"><%= result.created_at %></span>
-            <%= link_to "delete", result, method: :delete, data: { confirm: "Are you sure?" } %>
+            <% if current_user?(@user) %>
+              <%= link_to "delete", result, method: :delete, data: { confirm: "Are you sure?" } %>
+            <% end %>
           </li>
         <% end %>
       </ol>
