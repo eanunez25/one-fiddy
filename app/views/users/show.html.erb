@@ -8,7 +8,7 @@
       <div class="stats">
         <% unless @user.results.nil?%>
           <strong id="average" class="stat">
-            <%= @user.results.average("wpm")%> average
+            <%= @user.results.average("wpm").round(1)%> average
           </strong>
           <strong id="average" class="stat">
             <%= @user.results.maximum("wpm")%> max
