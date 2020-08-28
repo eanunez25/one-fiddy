@@ -1,17 +1,22 @@
-<h1><%= current_user.username %></h1>
 
-
-<div class="stats">
-  <% unless current_user.results.nil?%>
-    <strong id="average" class="stat">
-      <%= current_user.results.average("wpm").round(1)%> average
-    </strong>
-    <strong id="average" class="stat">
-      <%= current_user.results.maximum("wpm")%> max
-    </strong><br>         
-  <% end %>
-  <strong id="average" class="stat2">
-    <%= pluralize(current_user.results.count, "attempt") %></span>
-  </strong>
-</div><br></br>
-<span><%= link_to "View my profile", current_user %></span>
+<aside>
+  <section class="user-info">
+    <h1><%= current_user.username %></h1>
+      <h1>
+        <div class="stats">
+          <% unless current_user.results.nil?%>
+            <strong id="average" class="stat">
+              <%= current_user.results.average("wpm").round(1)%> average
+            </strong>
+            <strong id="average" class="stat">
+              <%= current_user.results.maximum("wpm")%> max
+            </strong><br>         
+          <% end %>
+          <strong id="average" class="stat2">
+            <%= pluralize(current_user.results.count, "attempt") %></span>
+          </strong>
+        </div><br></br>
+      </h1>
+      <span><%= link_to "View my profile", current_user %></span>
+  </section>
+</aside> 
