@@ -2,6 +2,12 @@
 
 <% if logged_in? %>
   <div class="row">
+    <div class="col-md-12">
+      <%= link_to "Type Test", "https://www.livechat.com/typing-speed-test/#/", class: "btn btn-lg btn-primary"%>
+    </div>
+  </div>
+
+  <div class="row">
     <aside class="col-md-4">
       <section class="user-info">
         <%= render 'shared/user_info'%>
