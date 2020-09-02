@@ -7,6 +7,11 @@ class ResultsController < ApplicationController
   # GET /results.json
   def index
     @results = Result.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @results }
+    end
   end
 
   # GET /results/1
